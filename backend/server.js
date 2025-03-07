@@ -33,10 +33,11 @@ const MAX_RETRIES = 3;
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: "*",  // Allow all origins
         methods: ["GET", "POST"]
     }
 });
+
 
 app.post('/api/jobs', upload.single('file'), (req, res) => {
     if (!req.file) {
