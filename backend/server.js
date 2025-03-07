@@ -24,7 +24,8 @@ app.use(express.json());
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/dist')));
 
-const upload = multer({ dest: 'uploads/' });
+// const upload = multer({ dest: 'uploads/' });
+const upload = multer({ storage: multer.diskStorage({}) });
 
 let jobs = [];
 let jobIdCounter = 1;
