@@ -20,7 +20,7 @@ const App = () => {
     fetchJobs();
 
     // Initialize socket connection
-    socketRef.current = io(import.meta.env.VITE_BASE_URL);
+    socketRef.current = io("http://localhost:5000");
 
     socketRef.current.on("connect", () => {
       console.log("Socket connected");
