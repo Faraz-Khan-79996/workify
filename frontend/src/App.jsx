@@ -20,7 +20,7 @@ const App = () => {
     fetchJobs();
 
     // Initialize socket connection
-    socketRef.current = io("http://localhost:5000");
+    socketRef.current = io("http://51.21.162.16:5000");
 
     socketRef.current.on("connect", () => {
       console.log("Socket connected");
